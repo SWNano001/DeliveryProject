@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+
+<div ng-app="CartApp" ng-controller="CartCtrl">
+
+    <h2>ตะกร้าสินค้า @ViewBag.Test.ToString()</h2>
+    <div class="row">
+        <div class="col">
+
+            <div class="teble-responsive">
+
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center" style="width:100px;">Action</th>
+                            <th class="text-center" style="width:100px;">#</th>
+                            <th class="text-center" style="width:200px;">รหัสสินค้า</th>
+                            <th class="text-center" style="width:300px;">ชื่อสินค้า</th>
+                            <th class="text-center" style="width:100px;">จำนวน</th>
+                            <th class="text-center" style="width:200px;">ราคาต่อหน่วย</th>
+                            <th class="text-center" style="width:200px;">รวม</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in basketlist">
+                            <td class="text-center">
+                                <button class="btn btn-danger">ลบ</button>
+                            </td>
+                            <td class="text-center">{{$index+1}}</td>
+                            <td>{{item.item_id}}</td>
+                            <td>{{item.item_id}}</td>
+                            <td class="text-center">
+                                <input type="number" value="{{item.item_qty}}" class="form-control" />
+                            </td>
+                            <td class="text-right">40</td>
+                            <td class="text-right">{{item.item_qty * 1 | number:2}}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <label><span class="text-danger">*</span> สถานที่จัดส่ง</label>
+            <select class="form-control">
+                <option>Select</option>
+                <option ng-repeat="item in locationlist" value="{{item.location_id}}">{{item.location_name}}</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>หมายเหตุ</label>
+            <textarea class="form-control" rows="5" placeholder="หมายเหตุ"></textarea>
+        </div>
+    </div>
+    <br />
+    <div class="row text-center">
+        <div class="col">
+            <button class="btn btn-success">สั่งซื้อ</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script>
+
+    var app = angular.module('CartApp', []);
+
+    app.controller('CartCtrl', ['$scope', '$http', function ($scope, $http) {
+
+
+        //ดึงข้อมูลสถานที่
+
+        $http({
+            url: "RoboShip/LocationList",
+            method: "POST",
+            catche: false
+        }).then(function (response) {
+            $scope.locationlist = response.data.locationlist;
+        });
+
+        //ดึงข้อมูลตะกร้า
+
+        $http({
+            url: "RoboShip/GetBasket",
+            method: "POST",
+            catche: false
+        }).then(function (response) {
+
+            $scope.basketlist = response.data.basketlist.items;
+
+          // alert(JSON.stringify(response.data.basketlist.items));
+
+        });
+ 
+
+    }]);
+
+
+</script>

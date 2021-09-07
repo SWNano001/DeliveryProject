@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Login\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Views\Users\" />
+    <None Remove="AngularJS.Core" />
+    <None Remove="angularjs" />
+    <None Remove="jQuery" />
+    <None Remove="Models\Login\" />
+    <None Remove="Models\RoboshipAPIConfig\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+    <Folder Include="wwwroot\custom\" />
+    <Folder Include="Views\Users\" />
+    <Folder Include="wwwroot\lib\Angularjs\" />
+    <Folder Include="Models\Login\" />
+    <Folder Include="Models\RoboshipAPIConfig\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\custom\" />
+    <Content Remove="wwwroot\lib\Angularjs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="angularjs" Version="1.8.2" />
+    <PackageReference Include="jQuery" Version="3.6.0" />
+  </ItemGroup>
+</Project>

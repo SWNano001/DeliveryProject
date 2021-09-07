@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Users";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+<div ng-app="Delivery" ng-controller="Usersctrl">
+
+
+   <div class="table-responsive">
+       <table class="table table-bordered">
+           <thead>
+              <tr>
+                  <th>#</th>
+                  <th>name</th>
+                  <th>Street</th>
+              </tr>
+           </thead>
+           <tbody>
+               <tr ng-repeat="item in userslist">
+                   <td>{{item.id}}</td>
+                   <td>{{item.name}}</td>
+                   <td>{{item.address.street}}</td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+
+
+   <br />
+    <p>
+        <button class="btn btn-success" ng-click="SendSMS()"> Send SMS</button>
+    </p>
+
+
+</div>
+
+
+<script>
+
+    var app = angular.module('Delivery', []);
+
+    app.controller('Usersctrl', ['$scope', '$http', function ($scope, $http) {
+
+
+
+        $http({
+            url: "Users/AllUsers",
+            method: "POST",
+            catche: false
+        }).then(function (response) {
+
+            $scope.userslist = response.data.users;
+
+        });
+
+
+        $scope.SendSMS = function () {
+            $http({
+                url: "Users/SendSMS",
+                method: "POST",
+                catche: false
+            }).then(function (response) {
+
+                alert(response.data.massage);
+
+            });
+        }
+
+    }]);
+
+    
+</script>
+
+
+
+
+
+

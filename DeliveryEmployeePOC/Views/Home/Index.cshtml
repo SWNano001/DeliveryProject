@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>@ViewBag.Username.ToString()</h3>
+
+<div class="row">
+
+    <div class="col">
+
+        <div class="card CardProduct text-center" style="width: 18rem;">
+
+            <div class="text-center">
+                <img src="~/Images/robot.png" class="card-img-top imagerobot">
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">Robot 001</h5>
+                <p class="card-text">Status <span class="text-success">Active</span></p>
+                <p>
+                    <button class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("AssignTask", "Home") + "'");">Assign Task</button>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col">
+
+        <div class="card CardProduct text-center" style="width: 18rem;">
+
+            <div class="text-center">
+                <img src="~/Images/robot.png" class="card-img-top imagerobot">
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">Robot 002</h5>
+                <p class="card-text">Status <span class="text-success">Active</span></p>
+                <p>
+                    <button class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("AssignTask", "Home") + "'");">Assign Task</button>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col">
+
+        <div class="card CardProduct text-center" style="width: 18rem;">
+
+            <div class="text-center">
+                <img src="~/Images/robot.png" class="card-img-top imagerobot">
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">Robot 003</h5>
+                <p class="card-text">Status <span class="text-success">Active</span></p>
+                <p>
+                    <button class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("AssignTask", "Home") + "'");">Assign Task</button>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

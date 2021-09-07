@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Confirm Order";
+}
+
+<h2>ยืนยันการรับสินค้า</h2>
+
+<div class="container">
+
+    <div class="listbox">
+        
+       <b>Order NO.:</b> 21082300001  <b>Order Date :</b> 20-08-21 08:00 <b>Location :</b> Location B
+        
+    </div>
+
+    <br />
+    <p>รายการสินค้า</p>
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-responsive table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+
+                                <th class="text-center" style="width:100px;">#</th>
+                                <th class="text-center" style="width:200px;">รหัสสินค้า</th>
+                                <th class="text-center" style="width:300px;">ชื่อสินค้า</th>
+                                <th class="text-center" style="width:100px;">จำนวน</th>
+                                <th class="text-center" style="width:200px;">ราคาต่อหน่วย</th>
+                                <th class="text-center" style="width:200px;">รวม</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td class="text-center">1</td>
+                                <td>0001</td>
+                                <td>ข้าวกระเพราไก่</td>
+                                <td class="text-center">
+                                    1
+                                </td>
+                                <td class="text-right">40</td>
+                                <td class="text-right">40</td>
+                            </tr>
+                            <tr>
+
+                                <td class="text-center">2</td>
+                                <td>0002</td>
+                                <td>คะน้าหมูกรอบ</td>
+                                <td class="text-center">
+                                    1
+                                </td>
+                                <td class="text-right">45</td>
+                                <td class="text-right">45</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col">
+            <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Request OTP</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Request OTP</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+               <div class="row">
+                   <div class="col-md-12">
+                       <label>PIN Code (Ref : n3qrty)</label>
+                       <input type="text" class="form-control" placeholder="PIN Code" />
+                   </div>
+               </div>
+                <br />
+
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <button class="btn btn-success" onclick="@("window.location.href='" + @Url.Action("CompletedShipping", "Shipping") + "'");">ยืนยัน</button>
+                    </div>
+                </div>
+
+            </div>
+          
+
+        </div>
+    </div>
+</div>

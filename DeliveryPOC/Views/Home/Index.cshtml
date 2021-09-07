@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<div ng-app="app" ng-controller="HomeCtrl">
+    
+
+    <div class="listbox text-center">
+
+       <h2>สวัสดี : @ViewBag.AccountName.ToString()</h2>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col" ng-repeat="item in productlist">
+
+            <div class="card CardProduct" style="width: 20rem;">
+                <div class="text-center">
+                    <img src="~/Images/1.jpeg" alt="image" class="card-img-top ImageProduct">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{item.item_name}}</h5>
+                    <p class="card-text">ราคา <span class="text-success">{{item.item_price}}</span> บาท</p>
+                    <div class="row text-center">
+                        <div class="col">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">สั่งซื้อ</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <div class="row text-center">
+        <div class="col">
+            <button class="btn btn-light">ดูเพิ่มเติม</button>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">สั่งซื้อสินค้า</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row text-center">
+                    <div class="col">
+                        <img src="~/Images/Pic1.png" class="card-img-top ImageProduct">
+                    </div>
+                </div>
+                <h5 class="card-title">ข้าวกระเพราหมู</h5>
+                <p class="card-text">ราคา <span class="text-success">35</span> บาท</p>
+           
+                <b class="card-text">รายละเอียดสินค้า</b>
+                <p class="card-text">สำหรับสินค้าที่ไม่มีตัวเลือกสินค้าใดๆ ส่วน การกำหนดราคา สินค้าคงคลัง และ การจัดส่ง จะแสดงบนหน้า</p>
+
+                <div class="row text-center">
+                    <div class="col-4">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon1">-</button>
+                            </div>
+                            <input type="number" class="form-control qtybox" value="1" placeholder="">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-4">
+
+                    </div>
+
+
+                </div>
+
+                <br />
+                <div class="row text-center">
+                    <div class="col">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">ใส่ตะกร้า</button>
+                    </div>
+                </div>
+
+            </div>
+          
+        </div>
+    </div>
+
+   
+</div>
+
+<!--Offcanvas-->
+
+
+<script>var app = angular.module('app', []);
+
+    app.controller('HomeCtrl', ['$scope', '$http', function ($scope, $http) {
+
+
+
+        $http({
+            url: "RoboShip/AllProduct",
+            method: "POST",
+            catche: false
+        }).then(function (response) {
+
+          
+            $scope.productlist = response.data.productlist;
+
+
+        });
+
+
+    }]);</script>
+
+
+
+

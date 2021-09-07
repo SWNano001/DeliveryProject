@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Login\" />
+    <None Remove="bootstrap" />
+    <None Remove="Views\Cart\" />
+    <None Remove="Views\Shipping\" />
+    <None Remove="Views\Shipped\" />
+    <None Remove="angularjs" />
+    <None Remove="DotNet.Cookies" />
+    <None Remove="Models\Location\" />
+    <None Remove="Models\RoboShipAPIConfig\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="AngularJS.Core" />
+    <None Remove="Models\Product\" />
+    <None Remove="Models\Login\" />
+    <None Remove="System.Net.Http.WinHttpHandler" />
+    <None Remove="Models\Order\" />
+    <None Remove="Models\Basket\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+    <Folder Include="wwwroot\custom\" />
+    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Shipping\" />
+    <Folder Include="Views\Shipped\" />
+    <Folder Include="Models\Location\" />
+    <Folder Include="Models\RoboShipAPIConfig\" />
+    <Folder Include="Models\Product\" />
+    <Folder Include="Models\Login\" />
+    <Folder Include="Models\Order\" />
+    <Folder Include="Models\Basket\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.1.0" />
+    <PackageReference Include="angularjs" Version="1.8.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="AngularJS.Core" Version="1.8.2" />
+    <PackageReference Include="System.Net.Http.WinHttpHandler" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\CustomCSS\" />
+  </ItemGroup>
+</Project>
