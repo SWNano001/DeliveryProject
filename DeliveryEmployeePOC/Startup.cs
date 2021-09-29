@@ -81,7 +81,7 @@ namespace DeliveryEmployeePOC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=CustomerDashboard}/{action=Index}/{id?}");
             });
         }
     }

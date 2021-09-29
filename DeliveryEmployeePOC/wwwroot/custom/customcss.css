@@ -32,3 +32,76 @@
     padding:10px;
     margin:10px;
 }
+
+.listboxred {
+    border-style: solid;
+    border-color:red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.listboxinfo {
+    background-color: skyblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.carddashbordprimary {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    /*border-style: solid;*/
+    background-color: #81d4fa;
+}
+
+.carddashbordwarning {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    /*border-style: solid;*/
+    background-color: #fff176;
+}
+
+.carddashbordsuccess {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    /*border-style: solid;*/
+    background-color: #aed581;
+}
+
+.carddashborddanger {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    /*border-style: solid;*/
+    background-color: #ff7043;
+}
+
+
+.carddashborddefault {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border-color:black;
+    border-style: solid;
+    padding:20px;
+    /*background-color: gray;*/
+}
+
+.carddashbordstatistic {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: dashed;
+    padding: 20px;
+    /*background-color: gray;*/
+}
+
+.imgdashboard{
+    width:64px;
+    height:64px;
+}

@@ -20,11 +20,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CustomerDashboard" asp-action="Index">Customer</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Statistic" asp-action="Index">Statistic</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="RobotStatistic" asp-action="Index">Robot</a>
+                        </li>
+                        <!-- <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+    </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

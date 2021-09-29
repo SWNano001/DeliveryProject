@@ -13,6 +13,10 @@
     <None Remove="jQuery" />
     <None Remove="Models\Login\" />
     <None Remove="Models\RoboshipAPIConfig\" />
+    <None Remove="Views\Dashboard\" />
+    <None Remove="Views\CustomerDashboard\" />
+    <None Remove="Views\Statistic\" />
+    <None Remove="Views\RoboStatistic\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\" />
@@ -21,6 +25,10 @@
     <Folder Include="wwwroot\lib\Angularjs\" />
     <Folder Include="Models\Login\" />
     <Folder Include="Models\RoboshipAPIConfig\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\CustomerDashboard\" />
+    <Folder Include="Views\Statistic\" />
+    <Folder Include="Views\RoboStatistic\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\custom\" />

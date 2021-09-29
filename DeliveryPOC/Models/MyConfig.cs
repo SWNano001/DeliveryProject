@@ -6,7 +6,5 @@ namespace DeliveryPOC.Models
         public string ApplicationName { get; set; }
         public string Version { get; set; }
 
-
-
     }
 }

@@ -15,13 +15,7 @@ namespace DeliveryPOC.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
+        
         [Authorize(Roles ="Admin,User")]
         public IActionResult Index()
         {
@@ -34,6 +28,8 @@ namespace DeliveryPOC.Controllers
             {
                 var x = user.Subject.Claims.ToList(); 
                 ViewBag.AccountName =x[2].Value;
+
+
             }
            
             return View();
